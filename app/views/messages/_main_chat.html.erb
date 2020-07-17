@@ -3,22 +3,21 @@
     <%= @room.name %>
   </div>
   <div class="close_room">
-    <a href="#">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
   </div>
 </div>
 <div class="messages">
    <%= render partial: "message", collection: @messages %>
 </div>
-<div class="form">
-  <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
-    <div class="form_input">
-      <%= f.text_field :content, class: "form_message", placeholder: "type a message" %>
-      <label class="form_image">
-        <span class="image_file">画像</span>
-        <%= f.file_field :image, class: "hidden" %>
-      </label>
-    </div>
-    <%= f.submit "送信", class: "send_btn" %>
-  <% end %>
-</div>
+<%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
+  <div class="form_input">
+    <%= f.text_field :content, class: "form_message", placeholder: "type a message" %>
+    <label class="form_image">
+      <span class="image_file">画像</span>
+      <%= f.file_field :image, class: "hidden" %>
+    </label>
+  </div>
+  <%= f.submit "送信", class: "send_btn" %>
+<% end %>
+
 
