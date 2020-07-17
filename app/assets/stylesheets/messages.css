@@ -16,13 +16,13 @@
   align-items: center;
 }
 
-.edit_user {
+.edit_user a {
   font-size: 16px;
   color: #FAFAFA;
   text-decoration: none;
 }
 
-.new_room {
+.new_room a {
   font-size: 10px;
   color: deepskyblue;
   padding: 14px;
